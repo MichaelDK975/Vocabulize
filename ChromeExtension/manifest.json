@@ -1,6 +1,6 @@
 {
     "name": "Michael's First Extension",
-    "version": "1.0",
+    "version": "1.0.1",
     "description": "Vocabulize ok",
     "manifest_version": 2,
     "browser_action": {
