@@ -2,8 +2,24 @@
     "name": "Michael's First Extension",
     "version": "1.0",
     "description": "Vocabulize ok",
-    "manifest_version": 2
-
+    "manifest_version": 2,
+    "browser_action": {
+        "default_title": "Selected Text",
+        "default_icon": "online.png",
+        "default_popup": "popup.html" 
+      },
+      "permissions": [
+        "tabs",
+        "<all_urls>"
+      ],
+      "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["selection.js"],
+          "run_at": "document_start",
+          "all_frames": true
+        }
+      ]
 
 
 
