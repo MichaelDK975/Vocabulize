@@ -4,7 +4,7 @@
     "description": "Vocabulize ok",
     "manifest_version": 2,
     "browser_action": {
-        "default_title": "Selected Text",
+        "default_title": "Vocabulize",
         "default_icon": "online.png",
         "default_popup": "popup.html" 
       },
