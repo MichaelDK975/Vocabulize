@@ -2,10 +2,10 @@ $(function(){
     // This runs a function when a button is clicked
     $('#paste').click(function(){pasteSelection();});
   });
-  
+
   function pasteSelection() {
     var text = document.getElementById('text');
-    text.innerHTML = "hello";
+    //text.innerHTML = "hello";
 
     chrome.tabs.query({active:true, windowId: chrome.windows.WINDOW_ID_CURRENT}, 
     function(tab) {
@@ -13,7 +13,7 @@ $(function(){
       function(response){
         var text = document.getElementById('text'); 
         text.innerHTML = response.data;
-        MyAwesomeFancyFunction(response.data);
+        //myAwesomeFancyFunction(response.data);
       });
     });
   }
