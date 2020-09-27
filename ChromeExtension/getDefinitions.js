@@ -1,5 +1,5 @@
 // This block of code executes something when the window is loaded. ON_LOAD!
-$(window).on('load', function() {
+window.onload = function (event) {
     // this is how you call an API
     //fetch('https://jsonplaceholder.typicode.com/todos/1')
      //   .then(response => response.json())
@@ -15,10 +15,8 @@ $(window).on('load', function() {
     //chosenWord = text.innerHTML;
     //text.innerHTML = chosenWord;
     doSomethingWithSelection(addsToDefinition);
-    //doSomethingWithSelection(reWriteSelectedWord);
-
-    
-});
+    //doSomethingWithSelection(reWriteSelectedWord);    
+};
 
 function reWriteSelectedWord(selectedWord){
     let whereToPutWord = document.getElementById("theWord");
@@ -27,8 +25,15 @@ function reWriteSelectedWord(selectedWord){
 
 // Combines the dictionary API lookup with putting the output on the screen into a DIV
 function addsToDefinition(selectedWord){
-    reWriteSelectedWord(selectedWord);
-    getTheDefinitionAndDoSomethingWithIt(selectedWord,putJSONIntoADiv);
+    if (!selectedWord) {
+        //window.alert ("nnooooooot sleected");
+        let myLabel = document.getElementById("labelForWord");
+        myLabel.hidden = true;
+    }
+    else{
+        reWriteSelectedWord(selectedWord);
+        getTheDefinitionAndDoSomethingWithIt(selectedWord,putJSONIntoADiv);
+    }
 }
 
 // Takes the JSON previously returned, and puts it on the screen - replacing a DIV, in button format

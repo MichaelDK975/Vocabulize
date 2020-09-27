@@ -1,6 +1,8 @@
 $(function(){
     // This runs a function when a button is clicked
     $('#paste').click(function(){pasteSelection();});
+    
+    document.getElementById('theButtonForWordlist').addEventListener('click',openWordList);
   });
 
   function pasteSelection() {
@@ -21,4 +23,12 @@ $(function(){
           myOwnFunction(response.data);
         });
     });
+  }
+
+  function openWordList() {
+
+    chrome.tabs.create({url: "wordList.html"});
+
+
+
   }
